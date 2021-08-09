@@ -1,8 +1,9 @@
 class Ticket:
     """ This class represent a lotto ticket """
-    def __init__(self, numbers, cities):
+    def __init__(self, numbers, cities, ticketype):
         self.numbers = numbers
         self.cities = cities
+        self.ticketype = ticketype
         self.wins = 0
 
     def __str__(self):
@@ -44,6 +45,13 @@ class Ticket:
             string += "| -------- |\n"
         else:
             string += "|\n"
+        string += row
+
+        #Adding the type of ticket
+        string += "| Type:    | "+self.ticketype
+        spaceafter = 9-len(self.ticketype)
+        string += " "*spaceafter
+        string += "|\n"
         string += row
         return string
         

@@ -50,11 +50,26 @@ def TicketCreation():
         else:
             print("City not avaible or incorrect.")
             
-    if len(numbers) == 0 or len(cities) == 0:
+    #Choosing the type of ticket
+    avaiable_type = ["Ambata", "Ambo", "Terno", "Quaterna", "Cinquina"]
+    print("\nThe type of ticket avaiable are: ")
+    for ttype in avaiable_type:
+        print(ttype,"", end="")
+    stop = False
+    while not stop:
+        ticketype = input("\nChoose the type of the ticket: ").lower().capitalize()
+        if ticketype == "":
+            stop = True
+        elif ticketype not in avaiable_type:
+            print("You must choose one of the ticket type above, try again:")
+        else:
+            stop = True
+
+    if len(numbers) == 0 or len(cities) == 0 or ticketype == "":
         print("Ticket canceled")
         return False
     #Returng the new generated ticket
-    return TicketClass.Ticket(numbers, cities)
+    return TicketClass.Ticket(numbers, cities, ticketype)
 
 def main():
     """ Testing the functions """
