@@ -1,5 +1,5 @@
 import TicketClass
-import TicketCreator
+import TicketGenerator
 
 def main():
     """ The main program, it request how many ticket to generate """
@@ -17,7 +17,7 @@ def main():
     #Creating the number of requested Ticket
     for x in range(TicketNum):
         print("\nTime to choose for the ticket number",x+1)
-        tickets[x+1] = TicketCreator.TicketCreation()
+        tickets[x+1] = TicketGenerator.TicketGenerator()
     
     #testing
     print("\nPrinting ticket:")
