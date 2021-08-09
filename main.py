@@ -16,14 +16,19 @@ def main():
     tickets = dict()
     #Creating the number of requested Ticket
     for x in range(TicketNum):
-        print("Time to choose for the ticket number",x+1)
-        tickets[x] = TicketCreator()
+        print("\nTime to choose for the ticket number",x+1)
+        tickets[x+1] = TicketCreator.TicketCreation()
     
     #testing
-    for ticket in tickets: 
-        print(ticket)
-    
-
+    print("\nPrinting ticket:")
+    for ticket in tickets:
+        if tickets[ticket] == False:
+            print("Something went wrong, try again")
+            quit()
+        print("")
+        print("+----------+----------+")
+        print("|  Ticket  |    ",ticket,"   |")
+        print(tickets[ticket])        
 
 if __name__=="__main__":
     main()
