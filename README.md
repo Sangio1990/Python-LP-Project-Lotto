@@ -18,4 +18,4 @@ and the "city" (aka "ruota") of the bill: Bari, Cagliari, Firenze, Genova, Milan
 
 Launch the command:<br/><br/>
 <strong>python3 main.py</strong><br/><br/>
-Then, for each ticket, the application will ask you how many numbers to extract (1 to 10), the type of bill and the city.
+Then, for each ticket, the application will ask you how many numbers to extract (1 to 10), the type of bill and the cities.

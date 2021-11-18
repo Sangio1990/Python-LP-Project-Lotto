@@ -1,18 +1,15 @@
 import random
 
-from lotto.bills import Bills
-from lotto.cities import Cities
-from lotto.ticket import Ticket
+from .bills import Bills
+from .cities import Cities
+from .ticket import Ticket
 
 
 class Lotto:
     """ This class is the business logic of the program """
-    def __init__(self):
-        self.numbers = []
-        self.cities = []
-        self.ticket_type = ""
 
-    def create_ticket(self):
+    @staticmethod
+    def create_ticket():
         # Choosing the numbers
         stop = False
         while not stop:
@@ -25,7 +22,7 @@ class Lotto:
                     stop = True
             except ValueError:
                 print("You must write an integer number")
-        self.number_generator(numbers_to_bet)
+        numbers = Lotto.number_generator(numbers_to_bet)
 
         # Choosing the cities
         print("\nNow choose the cities:")
@@ -41,16 +38,16 @@ class Lotto:
             if choosen == "":
                 stop = True
             elif choosen == "Tutte":
-                self.cities = Cities.available_city
+                cities = Cities.available_city
                 stop = True
             elif Cities.valid_city(choosen):
-                self.cities.append(Cities.format_city(choosen))
+                cities.append(Cities.format_city(choosen))
                 available_city.remove(choosen)
                 if len(available_city) == 0:
                     stop = True
             else:
                 print("City not available or incorrect.")
-        self.cities.sort()
+        cities.sort()
 
         # Choosing the type of ticket
         print("\nYou can choose one type of ticket.")
@@ -64,17 +61,25 @@ class Lotto:
                 print("You must choose one of the ticket type from above, try again:")
             else:
                 stop = True
-        self.ticket_type = Bills.format_bill(ticket_type)
+        ticket_type = Bills.format_bill(ticket_type)
 
-        return Ticket(self.numbers, self.cities, self.ticket_type)
+        return Ticket(numbers, cities, ticket_type)
 
-    def number_generator(self, numbers_to_bet):
+    @staticmethod
+    def number_generator(numbers_to_bet):
         """ This function generate a random number and check if it is already in the list"""
+        numbers = []
         for n in range(numbers_to_bet):
             stop = False
             while not stop:
                 number = random.randint(1, 90)
-                if number not in self.numbers:
-                    self.numbers.append(number)
+                if number not in numbers:
+                    numbers.append(number)
                     stop = True
-        self.numbers.sort()
+        numbers.sort()
+        return numbers
+
+
+if __name__ == "__main__":
+    test = Lotto.create_ticket()
+    print(test)

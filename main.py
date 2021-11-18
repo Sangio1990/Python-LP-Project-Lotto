@@ -21,6 +21,7 @@ def main():
     # Creating the number of requested Ticket
     for x in range(ticket_num):
         print("\nTime to choose for the ticket number", x+1)
+
         tickets.append(Lotto.create_ticket())
 
     # Testing
