@@ -1,20 +1,27 @@
 # Python-LP-Project-Lotto
+Learning Path Python - TomorrowDevs Exercise
 
-Learning Path Python 1 - TomorrowDevs Exercise
 
-First part of the project about Italian Lotto Game
-Reference: https://www.sisal.it/lotto/come-si-gioca
+## Requirements
+<strong>LP1: First part of the project about Italian Lotto Game</strong>
+<br/>Reference: https://www.sisal.it/lotto/come-si-gioca
 
-# Requirements 
-
-- The project must be OOP so that it can be extended in the next learning path
-- The software should ask the user how many bills he wants to generate (min: 1, max: 5, 0: exit)
+- The project must be OOP so that it can be extended in the next learning path.
+- The software should ask the user how many bills he wants to generate (min: 1, max: 5, 0: exit).
 - For each bill the software should ask the type of bill (ambata, ambo, terno, quaterna, cinquina) and the amount of numbers to generate (max 10 per bill)
 and the "city" (aka "ruota") of the bill: Bari, Cagliari, Firenze, Genova, Milano, Napoli, Palermo, Roma, Torino, Venezia and Tutte (for the project purpose completely ignore "ruota nazionale" and the "estratto determinato" play type).
-- Numbers will be randomly generated in the range 1-90 (inclusive)
-- Generate the ticket with nice ascii art table decoration (https://ozh.github.io/ascii-tables/)
+- Numbers will be randomly generated in the range 1-90 (inclusive).
+- Generate the ticket with nice ascii art table decoration (https://ozh.github.io/ascii-tables/).
 
-# How to start 
+
+<strong>LP2: Second part of the project about Italian Lotto Game</strong>
+<br/>Reference: https://www.servizitelevideo.rai.it/televideo/pub/pagina.jsp?p=786&s=0&r=Nazionale&idmenumain=0
+
+- Add lotto number extraction.
+- Check if some of the tickets generated result winners.
+
+
+## How to start 
 
 Launch the command:<br/><br/>
 <strong>python3 main.py</strong><br/><br/>

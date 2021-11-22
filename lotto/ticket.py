@@ -1,3 +1,6 @@
+from lotto.bills import Bills
+
+
 class Ticket:
     """ This class represent a lotto ticket """
     def __init__(self, numbers, cities, ticket_type):
@@ -54,6 +57,27 @@ class Ticket:
         string += "|\n"
         string += row
         return string
+
+    def is_winning(self, extractions):
+        """ This function check if a ticket is a winning one.
+            extractions must be a list of: cityname : [list of extracted numbers]"""
+        for city in self.cities:
+            win_numbers_count = 0
+            if self.ticket_type == "Ambata":
+                for number in self.numbers:
+                    if number - 1 in extractions[city]:
+                        win_numbers_count += 1
+                    if number in extractions[city]:
+                        win_numbers_count += 1
+                    if number + 1 in extractions[city]:
+                        win_numbers_count += 1
+            else:
+                for number in self.numbers:
+                    if number in extractions[city]:
+                        win_numbers_count += 1
+            if Bills.available_bills[self.ticket_type] <= win_numbers_count:
+                return True
+        return False
 
 
 def main():

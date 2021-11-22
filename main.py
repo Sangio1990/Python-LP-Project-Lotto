@@ -17,20 +17,7 @@ def main():
     if ticket_num == 0:
         print("Thanks! See you next time!")
         quit()
-    tickets = []
-    # Creating the number of requested Ticket
-    for x in range(ticket_num):
-        print("\nTime to choose for the ticket number", x+1)
-
-        tickets.append(Lotto.create_ticket())
-
-    # Testing
-    print("\nPrinting tickets:")
-    for x in range(len(tickets)):
-        print("")
-        print("+----------+----------+")
-        print("|  Ticket  |    ", str(x+1), "   |")
-        print(tickets[x])
+    Lotto(ticket_num)
 
 
 if __name__ == "__main__":

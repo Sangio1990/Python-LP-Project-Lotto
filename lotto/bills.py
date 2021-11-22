@@ -1,6 +1,6 @@
 class Bills:
     """ This class represent the available type of bill """
-    available_bills = ["Ambata", "Ambo", "Terno", "Quaterna", "Cinquina"]
+    available_bills = {"Ambata": 2, "Ambo": 2, "Terno": 3, "Quaterna": 4, "Cinquina": 5}
 
     @staticmethod
     def valid_bill(bill):

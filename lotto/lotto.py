@@ -1,12 +1,45 @@
 import random
 
-from .bills import Bills
-from .cities import Cities
-from .ticket import Ticket
+from lotto.bills import Bills
+from lotto.cities import Cities
+from lotto.ticket import Ticket
 
 
 class Lotto:
     """ This class is the business logic of the program """
+    def __init__(self, n):
+        self.tickets = []
+        self.ticket_n = n
+        self.extractions = {}
+
+        for x in range(self.ticket_n):
+            print("\nTime to choose for the ticket number", x + 1)
+            self.tickets.append(Lotto.create_ticket())
+
+        """
+        # Testing
+        print("\nPrinting tickets:")
+        for x in range(len(self.tickets)):
+            print("")
+            print("+----------+----------+")
+            print("|  Ticket  |    ", str(x + 1), "   |")
+            print(self.tickets[x])
+        """
+
+        # Extracting the numbers for every city
+        self.extraction()
+        print(self.extractions)  # This is only for debugging purpose, can be deleted later on
+        winning_ticket = []
+        for ticket in self.tickets:
+            if ticket.is_winning(self.extractions):
+                winning_ticket.append(ticket)
+
+        if len(winning_ticket) > 0:
+            print("The winning ticket(s):")
+            for ticket in winning_ticket:
+                print(ticket)
+        else:
+            print("No ticket result as winning, better luck next time!")
 
     @staticmethod
     def create_ticket():
@@ -30,19 +63,20 @@ class Lotto:
         available_city = [i for i in Cities.available_city]
         print("Leave blank to stop choosing.\n"
               "If you wanna bet an all cities write: Tutte")
+        cities = []
         while not stop:
             print("\nAvailable cities:")
             for city in available_city:
                 print(city + " ", end="")
-            choosen = input("\nOn which one you wanna bet? ")
-            if choosen == "":
+            chosen = input("\nOn which one you wanna bet? ")
+            if chosen == "" and len(cities) > 0:
                 stop = True
-            elif choosen == "Tutte":
+            elif chosen.lower() == "tutte":
                 cities = Cities.available_city
                 stop = True
-            elif Cities.valid_city(choosen):
-                cities.append(Cities.format_city(choosen))
-                available_city.remove(choosen)
+            elif Cities.valid_city(chosen):
+                cities.append(Cities.format_city(chosen))
+                available_city.remove(Cities.format_city(chosen))
                 if len(available_city) == 0:
                     stop = True
             else:
@@ -78,6 +112,18 @@ class Lotto:
                     stop = True
         numbers.sort()
         return numbers
+
+    def extraction(self):
+        for city in Cities.available_city:
+            temp_extraction = []
+            stop = False
+            while not stop:
+                num = random.randint(1, 91)
+                if num not in temp_extraction:
+                    temp_extraction.append(num)
+                    if len(temp_extraction) == 5:
+                        stop = True
+            self.extractions[city] = temp_extraction
 
 
 if __name__ == "__main__":

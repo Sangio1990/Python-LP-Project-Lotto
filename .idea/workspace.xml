@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a996c5-0de7-487f-9fcc-175b55b5b63b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lotto/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lotto/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lotto/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lotto/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lotto/bills.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto/bills.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lotto/lotto.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto/lotto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lotto/ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto/ticket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +35,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="215M3D4mXGqSkPPtZUWRH6j5oBT" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,14 +57,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sangio1990\PythonProjects\Python-LP-Project-Lotto\lotto" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.lotto">
+  <component name="RunManager" selected="Python.main">
     <configuration name="lotto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python-LP-Project-Lotto" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,9 +130,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ticket" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.lotto" />
-        <item itemvalue="Python.ticket" />
       </list>
     </recent_temporary>
   </component>
@@ -138,5 +157,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
