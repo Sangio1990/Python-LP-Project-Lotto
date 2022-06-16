@@ -2,7 +2,7 @@ from lotto.lotto import Lotto
 
 
 def main():
-    """ The main program, it request how many ticket to generate """
+    """The main program, it request how many ticket to generate"""
     print("You can bet from 1 to 5 ticket, use 0 to exit")
     ticket_num = input("Hi!\nHow many ticket(s) you want to buy? ")
     while type(ticket_num) != int:

@@ -6,7 +6,8 @@ from lotto.ticket import Ticket
 
 
 class Lotto:
-    """ This class is the business logic of the program """
+    """This class is the business logic of the program"""
+
     def __init__(self, n):
         self.tickets = []
         self.ticket_n = n
@@ -16,19 +17,11 @@ class Lotto:
             print("\nTime to choose for the ticket number", x + 1)
             self.tickets.append(Lotto.create_ticket())
 
-        """
-        # Testing
-        print("\nPrinting tickets:")
-        for x in range(len(self.tickets)):
-            print("")
-            print("+----------+----------+")
-            print("|  Ticket  |    ", str(x + 1), "   |")
-            print(self.tickets[x])
-        """
-
         # Extracting the numbers for every city
         self.extraction()
-        print(self.extractions)  # This is only for debugging purpose, can be deleted later on
+        print(
+            self.extractions
+        )  # This is only for debugging purpose, can be deleted later on
         winning_ticket = []
         for ticket in self.tickets:
             if ticket.is_winning(self.extractions):
@@ -37,6 +30,7 @@ class Lotto:
         if len(winning_ticket) > 0:
             print("The winning ticket(s):")
             for ticket in winning_ticket:
+                ticket.calculate_prize()
                 print(ticket)
         else:
             print("No ticket result as winning, better luck next time!")
@@ -61,8 +55,10 @@ class Lotto:
         print("\nNow choose the cities:")
         stop = False
         available_city = [i for i in Cities.available_city]
-        print("Leave blank to stop choosing.\n"
-              "If you wanna bet an all cities write: Tutte")
+        print(
+            "Leave blank to stop choosing.\n"
+            "If you wanna bet an all cities write: All"
+        )
         cities = []
         while not stop:
             print("\nAvailable cities:")
@@ -71,7 +67,7 @@ class Lotto:
             chosen = input("\nOn which one you wanna bet? ")
             if chosen == "" and len(cities) > 0:
                 stop = True
-            elif chosen.lower() == "tutte":
+            elif chosen.lower() == "all":
                 cities = Cities.available_city
                 stop = True
             elif Cities.valid_city(chosen):
@@ -86,22 +82,39 @@ class Lotto:
         # Choosing the type of ticket
         print("\nYou can choose one type of ticket.")
         print("The type of ticket available are: ")
-        for ttype in Bills.available_bills:
-            print(ttype, "", end="")
+        available_ticket_type = Bills.available_ticket_type(numbers_to_bet)
+        print(" ".join(available_ticket_type))
         stop = False
         while not stop:
-            ticket_type = input("\nChoose the type of the ticket: ").lower().capitalize()
-            if not Bills.valid_bill(ticket_type):
+            ticket_type = (
+                input("\nChoose the type of the ticket: ").lower().capitalize()
+            )
+            if not Bills.valid_bill(ticket_type, available_ticket_type):
                 print("You must choose one of the ticket type from above, try again:")
             else:
                 stop = True
         ticket_type = Bills.format_bill(ticket_type)
 
-        return Ticket(numbers, cities, ticket_type)
+        # Choosing the import to bet
+        print("\nNow choose the import to bet:")
+        stop = False
+        while not stop:
+            ticket_import = input("How much you wanna bet on this ticket? ")
+            try:
+                ticket_import = int(ticket_import)
+                stop = True
+            except ValueError:
+                try:
+                    ticket_import = float(ticket_import)
+                    stop = True
+                except ValueError:
+                    print("Invalid value, you must put a number.")
+
+        return Ticket(numbers, cities, ticket_type, ticket_import)
 
     @staticmethod
     def number_generator(numbers_to_bet):
-        """ This function generate a random number and check if it is already in the list"""
+        """This function generate a random number and check if it is already in the list"""
         numbers = []
         for n in range(numbers_to_bet):
             stop = False

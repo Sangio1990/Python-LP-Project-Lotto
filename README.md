@@ -21,6 +21,13 @@ and the "city" (aka "ruota") of the bill: Bari, Cagliari, Firenze, Genova, Milan
 - Check if some of the tickets generated result winners.
 
 
+<strong>LP3: Third part of the project about Italian Lotto Game</strong>
+<br/>Reference: https://www.servizitelevideo.rai.it/televideo/pub/pagina.jsp?p=786&s=0&r=Nazionale&idmenumain=0
+
+- When asking for tickets to generate you have also to ask the amount of money to put for each ticket
+- If a particular ticket won you have to calculate and show the prizes, both gross and net. see: https://www.estrazionedellotto.it/prontuario-vincite-lotto)
+
+
 ## How to start 
 
 Launch the command:<br/><br/>
