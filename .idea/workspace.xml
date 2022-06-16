@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91a996c5-0de7-487f-9fcc-175b55b5b63b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python-LP-Project-Lotto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-LP-Project-Lotto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lotto/bills.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto/bills.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lotto/cities.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto/cities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lotto/lotto.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto/lotto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lotto/ticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/lotto/ticket.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pygame_Team_Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -156,8 +147,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ticket" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.ticket" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.lotto" />
       </list>

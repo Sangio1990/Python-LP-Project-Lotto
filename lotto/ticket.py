@@ -74,24 +74,11 @@ class Ticket:
     def is_winning(self, extractions):
         """This function check if a ticket is a winning one.
         extractions must be a list of: cityname : [list of extracted numbers]"""
-        win_numbers_count = 0
         for city in self.cities:
-            if self.ticket_type == "Ambata":
-                print("Ambata")
-                """
-                for number in self.numbers:
-                    if number - 1 in extractions[city]:
-                        win_numbers_count += 1
-                    if number in extractions[city]:
-                        win_numbers_count += 1
-                    if number + 1 in extractions[city]:
-                        win_numbers_count += 1
-                """
-            else:
-                win_numbers_count = 0
-                for number in self.numbers:
-                    if number in extractions[city]:
-                        win_numbers_count += 1
+            win_numbers_count = 0
+            for number in self.numbers:
+                if number in extractions[city]:
+                    win_numbers_count += 1
             if Bills.available_bills[self.ticket_type] <= win_numbers_count:
                 print(
                     "You won on the Ruota of:",
@@ -111,9 +98,12 @@ class Ticket:
 
         n = self.total_winning_numbers_per_city[city]
         k = Bills.available_bills[self.ticket_type]
-        combinations = int(
-            math.factorial(n) / (math.factorial(k) - math.factorial(n - k))
-        )
+        try:
+            combinations = int(
+                math.factorial(n) / (math.factorial(k) - math.factorial(n - k))
+            )
+        except ZeroDivisionError:  # if we have only 1 number in a Ruota and the bills is Ambata than we got this error
+            combinations = 1
         print(combinations)
         return combinations
 
@@ -121,7 +111,9 @@ class Ticket:
         """This function calculate the winning prize of the ticket"""
         prize_multiplier = Bills.won_matrix[self.ticket_type][len(self.numbers) - 1]
         for city in self.total_winning_numbers_per_city:
-            self.money_won += self._calculate_combinations(city) * prize_multiplier
+            self.money_won += (
+                self._calculate_combinations(city) * self.bet
+            ) * prize_multiplier
 
 
 def main():
