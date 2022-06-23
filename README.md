@@ -1,2 +1,2 @@
 # Python-LP-Project-Lotto
-This program generate ticket based on user choise and simulate and extraction.
+This program generate tickets based on user choise and simulate an extraction.
